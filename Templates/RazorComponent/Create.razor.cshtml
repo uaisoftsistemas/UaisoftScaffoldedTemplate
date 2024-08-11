@@ -1,0 +1,25 @@
+﻿@page "/create@Model.EntityName"
+@inject NavigationManager Navigation
+@inject I@Model.EntityNameService @Model.EntityNameService
+
+<h3>Create @Model.EntityName</h3>
+
+<DxFormLayout>
+    <DxFormLayoutItem Field="@(() => new@Model.EntityName.Property)" Caption="Property">
+        <DxTextBox @bind-Text="new@Model.EntityName.Property" />
+    </DxFormLayoutItem>
+
+    <DxFormLayoutItem>
+        <DxButton Click="HandleValidSubmit">Create</DxButton>
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+@code {
+    private @Model.EntityName new@Model.EntityName = new @Model.EntityName();
+
+    private async Task HandleValidSubmit()
+    {
+        await @Model.EntityNameService.Add@Model.EntityName(new@Model.EntityName);
+        Navigation.NavigateTo("/");
+    }
+}

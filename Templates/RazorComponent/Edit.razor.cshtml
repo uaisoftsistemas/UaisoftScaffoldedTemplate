@@ -1,0 +1,33 @@
+﻿@page "/edit@Model.EntityName/{id:int}"
+@inject NavigationManager Navigation
+@inject I@Model.EntityNameService @Model.EntityNameService
+
+<h3>Edit @Model.EntityName</h3>
+
+<DxFormLayout>
+    <DxFormLayoutItem Field="@(() => edit@Model.EntityName.Property)" Caption="Property">
+        <DxTextBox @bind-Text="edit@Model.EntityName.Property" />
+    </DxFormLayoutItem>
+
+    <DxFormLayoutItem>
+        <DxButton Click="HandleValidSubmit">Save</DxButton>
+    </DxFormLayoutItem>
+</DxFormLayout>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private @Model.EntityName edit@Model.EntityName = new @Model.EntityName();
+
+    protected override async Task OnInitializedAsync()
+    {
+        edit@Model.EntityName = await @Model.EntityNameService.Get@Model.EntityNameById(Id);
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        await @Model.EntityNameService.Update@Model.EntityName(edit@Model.EntityName);
+        Navigation.NavigateTo("/");
+    }
+}

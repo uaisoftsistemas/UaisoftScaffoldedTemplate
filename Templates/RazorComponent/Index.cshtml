@@ -1,0 +1,17 @@
+﻿@page "/"
+@inject I@Model.EntityNameService @Model.EntityNameService
+
+<h3>@Model.EntityName List</h3>
+
+<DxDataGrid Data="@Model.EntityNameList" ShowFilterRow="true">
+    <DxDataGridColumn Field="@nameof(@Model.EntityName.Property)" Caption="Property" />
+</DxDataGrid>
+
+@code {
+    private List<@Model.EntityName> @Model.EntityNameList = new List<@Model.EntityName>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        @Model.EntityNameList = await @Model.EntityNameService.GetAll@Model.EntityName();
+    }
+}

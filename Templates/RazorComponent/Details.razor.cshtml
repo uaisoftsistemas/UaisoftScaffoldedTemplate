@@ -1,0 +1,20 @@
+﻿@page "/details@Model.EntityName/{id:int}"
+@inject I@Model.EntityNameService @Model.EntityNameService
+
+<h3>@Model.EntityName Details</h3>
+
+<DxFormLayout>
+    @* Display fields here using DxFormLayoutItem *@
+</DxFormLayout>
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    private @Model.EntityName @Model.EntityName = new @Model.EntityName();
+
+    protected override async Task OnInitializedAsync()
+    {
+        @Model.EntityName = await @Model.EntityNameService.Get@Model.EntityNameById(Id);
+    }
+}

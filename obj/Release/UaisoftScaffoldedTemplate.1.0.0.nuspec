@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>UaisoftScaffoldedTemplate</id>
+    <version>1.0.0</version>
+    <authors>UaisoftScaffoldedTemplate</authors>
+    <description>Package Description</description>
+    <repository type="git" />
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="Microsoft.AspNetCore.Identity.EntityFrameworkCore" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.VisualStudio.Web.CodeGeneration" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.VisualStudio.Web.CodeGeneration.Design" version="6.0.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.VisualStudio.Web.CodeGeneration.Utils" version="6.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="C:\WorkspaceCarneiro\ProjetosTeste\UaisoftScaffoldedTemplate\UaisoftScaffoldedTemplate\bin\Release\net6.0\UaisoftScaffoldedTemplate.dll" target="lib\net6.0\UaisoftScaffoldedTemplate.dll" />
+  </files>
+</package>
